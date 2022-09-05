@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1>Czy na pewno chcesz usunąć {{ film.tytul }}?</h1>
+    <form method="post">
+        <button type="submit">Usuń film</button>
+    </form>
+    <a href="{% url 'wszystkie_filmy' %}">Cofnij</a>
+</body>
+</html>
