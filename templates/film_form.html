@@ -2,10 +2,11 @@
 {% load bootstrap %}
 {% block tytul%}Film form{% endblock %}
 {% block strona %}
-<i class="fa-solid fa-dragon"></i>
+
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|bootstrap }}
+        {{ form_dodatkowe|bootstrap }}
         <button type="submit">Dodaj film</button>
     </form>
     <a href="{% url 'wszystkie_filmy' %}">Cofnij</a>
