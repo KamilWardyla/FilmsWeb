@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ONL_PYT_W_19_podstawy_django_egzamin_probny" vcs="Git" />
   </component>
 </project>

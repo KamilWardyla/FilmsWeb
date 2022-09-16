@@ -2,20 +2,21 @@
 {% block tytul%}Lista filmów{% endblock %}
 
 {% block strona %}
-    <a href="{% url 'nowy_film' %}">Dodaj nowy film</a>
-    {%  if filmy|length == 0 %}
-        <h2>Brak filmów</h2>
-    {% else %}
-        <h2>Ilosc filmow w BD: {{ filmy|length }}</h2>
-        {% for film in filmy%}
-            <div class="card" style="width: 65rem;">
-              <div class="card-body">
-                <h5 class="card-title">{{ film }}</h5>
-                <p class="card-text">{{ film.opis}}</p>
-                <a href="{% url 'edytuj_film' film.id %}"><i class="fa-solid fa-2x fa-file-pen"></i></a>
-                <a href="{% url 'usun_film' film.id %}"><i class="fa-solid fa-2x fa-trash"></i></a>
-              </div>
-            </div>
-        {% endfor %}
-    {%  endif %}
+<a href="{% url 'nowy_film' %}">Dodaj nowy film</a>
+{%  if filmy|length == 0 %}
+<h2>Brak filmów</h2>
+{% else %}
+<h2>Ilosc filmow w BD: {{ filmy|length }}</h2>
+
+{% for film in filmy%}
+<div class="card" style="width: 65rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{ film }}</h5>
+        <p class="card-text">{{ film.opis}}</p>
+        <a href="{% url 'edytuj_film' film.id %}"><i class="fa-solid fa-2x fa-file-pen"></i></a>
+        <a href="{% url 'usun_film' film.id %}"><i class="fa-solid fa-2x fa-trash"></i></a>
+    </div>
+</div>
+{% endfor %}
+{%  endif %}
 {% endblock %}
